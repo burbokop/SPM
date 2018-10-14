@@ -268,8 +268,8 @@ void SPM_BlitRotatedSurface(SDL_Surface *surface, SDL_Surface *screen_surface, i
         static_cast<int>(y - surface->h * zoom / 2), 0, 0
     };
     temp_surface = rotozoomSurface(surface, angle, zoom, smooth);
-    rect.x = rect.x - static_cast<int>(temp_surface->w / 2 + surface->w * zoom / 2);
-    rect.y = rect.y - static_cast<int>(temp_surface->h / 2 + surface->h * zoom / 2);
+    rect.x = static_cast<int>(rect.x - temp_surface->w / 2 + surface->w * zoom / 2);
+    rect.y = static_cast<int>(rect.y - temp_surface->h / 2 + surface->h * zoom / 2);
     SDL_BlitSurface(temp_surface, nullptr, screen_surface, &rect);
 }
 
