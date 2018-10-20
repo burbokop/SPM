@@ -6,7 +6,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_rotozoom.h>
 #include <SDL2/SDL_ttf.h>
-#include <iostream>
+#include <string>
 
 Uint32 SPM_ColorRGB(Uint8 R, Uint8 G, Uint8 B);
 

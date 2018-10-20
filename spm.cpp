@@ -291,7 +291,7 @@ void SPM_TTF_BlendedText(SDL_Surface *surface, std::string text_line, TTF_Font *
     rgbColor.r = (color >> 16) & 255;
     rgbColor.g = (color >> 8) & 255;
     rgbColor.b = (color >> 0) & 255;
-    text_surface = TTF_RenderText_Blended(text_font, text_line.c_str(), rgbColor);
+    text_surface = TTF_RenderUTF8_Blended(text_font, text_line.c_str(), rgbColor);
     text_rect.x = text_x;
     text_rect.y = text_y;
     SDL_BlitSurface(text_surface, nullptr, surface, &text_rect);
@@ -304,7 +304,6 @@ SDL_Surface *SPM_CutOutSurface(SDL_Surface *surface, int x, int y, int w, int h)
     surfaceRect.y = y;
     surfaceRect.w = w;
     surfaceRect.h = h;
-
     SDL_Surface *tmp;
     tmp = SDL_CreateRGBSurface(0, surfaceRect.w, surfaceRect.h, 32, 0x000000ff, 0x0000ff00, 0x00ff0000, 0xff000000);
     SDL_BlitSurface(surface, &surfaceRect, tmp, nullptr);
@@ -325,7 +324,6 @@ SDL_Surface *SPM_Flip(SDL_Surface *surface, bool xFlip, bool yFlip) {
         for (int y = 0; y < surface->h; ++y) {
             for (int x = 0; x < surface->w; ++x) {
                 SPM_FillPixel(result, x, surface->h - y, pixels[x + surface->w * y]);
-
             }
         }
     }
@@ -333,7 +331,6 @@ SDL_Surface *SPM_Flip(SDL_Surface *surface, bool xFlip, bool yFlip) {
         for (int y = 0; y < surface->h; ++y) {
             for (int x = 0; x < surface->w; ++x) {
                 SPM_FillPixel(result, surface->w - x, surface->h - y, pixels[x + surface->w * y]);
-
             }
         }
     }
