@@ -1,5 +1,5 @@
 #include "spm.h"
-
+#include <SDL2/SDL2_rotozoom.h>
 
 Uint32 SPM_ColorRGB(Uint8 R, Uint8 G, Uint8 B) {
     return 65536 * R + 256 * G + B;
