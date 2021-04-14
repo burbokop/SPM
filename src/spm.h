@@ -4,7 +4,6 @@
 #define SPM_PI 3.141592653589793238462643383279502884
 
 #include <SDL2/SDL.h>
-#include <SDL2/SDL2_rotozoom.h>
 #include <SDL2/SDL_ttf.h>
 #include <string>
 
