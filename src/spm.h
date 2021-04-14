@@ -4,6 +4,7 @@
 #define SPM_PI 3.141592653589793238462643383279502884
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 #include <string>
 
 Uint32 SPM_ColorRGB(Uint8 R, Uint8 G, Uint8 B);
