@@ -18,5 +18,6 @@ add_library(SPM STATIC
 
 target_link_libraries(SPM
     SDL2
+    SDL2_ttf
     SDL2_gfx
     )
